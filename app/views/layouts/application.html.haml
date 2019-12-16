@@ -7,17 +7,6 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     :javascript
-      jQuery(function($){
-        $(function(){
-          $('.content__type__box').on('click', function() {
-            if ($(this).prop('checked')){
-              // 一旦全てをクリアして再チェックする
-              $('.content__type__box').prop('checked', false);
-              $(this).prop('checked', true);
-            }
-          });
-        });
-      });
 
 
   %body

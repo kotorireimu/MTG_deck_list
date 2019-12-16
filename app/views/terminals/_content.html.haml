@@ -21,21 +21,17 @@
   .content__unit
     %h 使用する単位は何にしますか？(空欄でも可)
     %p ※ ランダムに決めたい場合は、テキスト欄に一つずつ単位を追加してください
-    %P
-    %input.content__unit__text{:type => "text", placeholder: "単位を入力"}
-    %P
-    %input.content__unit__text{:type => "text", placeholder: "単位を入力"}
-    %P
-    %input.content__unit__text{:type => "text", placeholder: "単位を入力"}
-    %P
-    %input.content__unit__text{:type => "text", placeholder: "単位を入力"}
-    %P
-    %input.content__unit__text{:type => "text", placeholder: "単位を入力"}
+    %input#content__unit__text1{:type => "text", placeholder: "単位を入力"}
+    %input#content__unit__text2{:type => "text", placeholder: "単位を入力"}
+    %input#content__unit__text3{:type => "text", placeholder: "単位を入力"}
+    %input#content__unit__text4{:type => "text", placeholder: "単位を入力"}
+    %input#content__unit__text5{:type => "text", placeholder: "単位を入力"}
+
   
   
   -# = link_to "ダイスロール！" , posts_index_path , class: "content__btn"
   %button#button ダイスロール！！
-  %label{:for => "resultForm"} 取得した値:
+  %label{:for => "resultForm"} 結果：
   %input#resultForm{:type => "tel"}/
 
 
@@ -43,27 +39,45 @@
 
   
 :javascript
+  jQuery(function($){
+    $(function(){
+      $('.content__type__box').on('click', function() {
+        if ($(this).prop('checked')){
+          // 一旦全てをクリアして再チェックする
+          $('.content__type__box').prop('checked', false);
+          $(this).prop('checked', true);
+        }
+      });
+    });
+  });
+
   // ボタンの要素を取得
   var button = document.getElementById("button");
-   
   // ボタンをクリックした時の処理
   button.addEventListener("click", function(e) {
-   
-      e.preventDefault();
-   
-      // 入力フォームの値を取得
-      var contentMaskDice = document.getElementById("content__mask__dice").value;
-      var contentNumberDice = document.getElementById("content__number__dice").value;
-      sum = 0
-      for (var i = 1; i <= contentNumberDice ;i++ ){
-        var randnum = Math.floor( Math.random() * contentMaskDice + 1);
-        sum = randnum + sum
-      }
-      var Sum = sum
-      // var randnumNumber
-      // 取得した値を別の入力フォームに表示
-      var resultForm = document.getElementById("resultForm");
-      resultForm.value = Sum
+    e.preventDefault();
+    // 入力フォームの値を取得
+    var contentMaskDice = document.getElementById("content__mask__dice").value;
+    var contentNumberDice = document.getElementById("content__number__dice").value;
+
+    sum = 0
+    for (var i = 1; i <= contentNumberDice ;i++ ){
+      var randnum = Math.floor( Math.random() * contentMaskDice + 1);
+      sum = randnum + sum
+    }
+    var Sum = sum
+
+    var contentUnitText1 = document.getElementById("content__unit__text1").value;
+    var contentUnitText2 = document.getElementById("content__unit__text2").value;
+    var contentUnitText3 = document.getElementById("content__unit__text3").value;
+    var contentUnitText4 = document.getElementById("content__unit__text4").value;
+    var contentUnitText5 = document.getElementById("content__unit__text5").value;
+    var contentUnitText = [contentUnitText1 , contentUnitText2 , contentUnitText3 , contentUnitText4 , contentUnitText5]
+    var randtext = contentUnitText[Math.floor( Math.random() * contentUnitText.length)];
+
+    // 取得した値を別の入力フォームに表示
+    var resultForm = document.getElementById("resultForm");
+    resultForm.value = Sum + randtext
   });
 
 
