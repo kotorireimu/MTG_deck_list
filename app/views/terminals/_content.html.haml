@@ -1,0 +1,35 @@
+.content
+  .content__type
+    どちらかをチェックしてください
+    %p
+    %input.content__type__box{:type => "checkbox"}
+    ダイス結果を並べる
+    %input.content__type__box{:type => "checkbox"}
+    ダイス結果を足す
+  .content__mask
+    何面体のサイコロを使用しますか？
+    %p
+    %input.content__mask__dice{:type => "tel", placeholder: "半角数字で入力"}面体
+    %p
+    %input.content__mask__box{:type => "checkbox"}
+    特別にダイス内容に0を含める
+
+  .content__number
+    何個使用しますか？
+    %P
+    %input.content__number__dice{:type => "tel", placeholder: "半角数字で入力"}個
+  .content__unit
+    %h 使用する単位は何にしますか？(空欄でも可)
+    %p ※ ランダムに決めたい場合は、テキスト欄に一つずつ単位を追加してください
+    %P
+    %input.content__unit__text{:type => "text", placeholder: "単位を入力"}
+    %P
+    %input.content__unit__text{:type => "text", placeholder: "単位を入力"}
+    %P
+    %input.content__unit__text{:type => "text", placeholder: "単位を入力"}
+    %P
+    %input.content__unit__text{:type => "text", placeholder: "単位を入力"}
+    %P
+    %input.content__unit__text{:type => "text", placeholder: "単位を入力"}
+  = link_to "ダイスロール！" , posts_index_path , class: "content__btn"
+  

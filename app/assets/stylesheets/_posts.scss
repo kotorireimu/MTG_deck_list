@@ -1,3 +1,10 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.roulette{
+  height: 100vh;
+  width: 100vh;
+  font-size: 3rem;
+  &__number{
+    width: 100vw;
+    padding: 10% 15%;
+    text-align: center;
+  }
+}

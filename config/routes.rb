@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'posts#index'
+  get 'terminals/index'
+  root to: 'terminals#index'
+  get 'posts/index'
 end

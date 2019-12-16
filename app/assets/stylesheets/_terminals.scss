@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+
+.content{
+  width:  100vw;
+  height: 100vh;
+  text-align: center;
+  background-color: rgb(3, 142, 223);
+  padding: 5%;
+  &__type{
+    font-size: 1rem;
+    &__box{
+    }
+  }
+  &__mask{
+    &__dice{
+      width: 12vw;
+      text-align: right;
+    }
+    &__box{
+
+    }
+  }
+  &__number{
+    &__dice{
+      width: 12vw;
+      text-align: right;
+    }
+  }
+  &__unit{
+    &__text{
+      text-align: center;
+      width: 12vw;
+    }
+  }
+  &__btn{
+    display: inline-block;
+    width: 20vw;
+    background-color: #ffa300;
+    font-size: 1rem;
+    color: #FFF;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 24px;
+    border-radius: 4px;
+    border-bottom: 4px solid #d37800;
+  }
+}
