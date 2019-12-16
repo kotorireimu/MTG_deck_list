@@ -1,10 +1,10 @@
 %form
   %input{:onclick => "random()", :type => "button", :value => "ダイスロール！！"}/
-  %span#omikuji
+  %span#omikuji 表示場所
 :javascript
   function random() {
   var rand = Math.floor( Math.random() * 5) ; //おみくじの目の生成
-    if (rand == 0) msg = "大吉";
+          if (rand == 0) msg = "大吉";
   	if (rand == 1) msg = "中吉";
   	if (rand == 2) msg = "小吉";
   	if (rand == 3) msg = "吉";

@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+#content__mask__dice{
+  width: 12vw;
+  text-align: right;
+}
+
 .content{
   width:  100vw;
   height: 100vh;
@@ -14,10 +19,6 @@
     }
   }
   &__mask{
-    &__dice{
-      width: 12vw;
-      text-align: right;
-    }
     &__box{
 
     }

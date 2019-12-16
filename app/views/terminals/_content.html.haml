@@ -8,8 +8,8 @@
     ダイス結果を足す
   .content__mask
     何面体のサイコロを使用しますか？
-    %p
-    %input.content__mask__dice{:type => "tel", placeholder: "半角数字で入力"}面体
+    %label{:for => "content__mask__dice"}
+    %input#content__mask__dice{:type => "tel" , placeholder: "半角数字で入力"}面体
     %p
     %input.content__mask__box{:type => "checkbox"}
     特別にダイス内容に0を含める
@@ -17,7 +17,7 @@
   .content__number
     何個使用しますか？
     %P
-    %input.content__number__dice{:type => "tel", placeholder: "半角数字で入力"}個
+    %input#content__number__dice{:type => "tel", placeholder: "半角数字で入力"}個
   .content__unit
     %h 使用する単位は何にしますか？(空欄でも可)
     %p ※ ランダムに決めたい場合は、テキスト欄に一つずつ単位を追加してください
@@ -31,5 +31,39 @@
     %input.content__unit__text{:type => "text", placeholder: "単位を入力"}
     %P
     %input.content__unit__text{:type => "text", placeholder: "単位を入力"}
-  = link_to "ダイスロール！" , posts_index_path , class: "content__btn"
   
+  
+  -# = link_to "ダイスロール！" , posts_index_path , class: "content__btn"
+  %button#button ダイスロール！！
+  %label{:for => "resultForm"} 取得した値:
+  %input#resultForm{:type => "tel"}/
+
+
+
+
+  
+:javascript
+  // ボタンの要素を取得
+  var button = document.getElementById("button");
+   
+  // ボタンをクリックした時の処理
+  button.addEventListener("click", function(e) {
+   
+      e.preventDefault();
+   
+      // 入力フォームの値を取得
+      var contentMaskDice = document.getElementById("content__mask__dice").value;
+      var contentNumberDice = document.getElementById("content__number__dice").value;
+      sum = 0
+      for (var i = 1; i <= contentNumberDice ;i++ ){
+        var randnum = Math.floor( Math.random() * contentMaskDice + 1);
+        sum = randnum + sum
+      }
+      var Sum = sum
+      // var randnumNumber
+      // 取得した値を別の入力フォームに表示
+      var resultForm = document.getElementById("resultForm");
+      resultForm.value = Sum
+  });
+
+
