@@ -73,7 +73,8 @@
     var contentUnitText4 = document.getElementById("content__unit__text4").value;
     var contentUnitText5 = document.getElementById("content__unit__text5").value;
     var contentUnitText = [contentUnitText1 , contentUnitText2 , contentUnitText3 , contentUnitText4 , contentUnitText5]
-    var randtext = contentUnitText[Math.floor( Math.random() * contentUnitText.length)];
+    var ContentUnitText = contentUnitText.filter(v => v)
+    var randtext = contentUnitText[Math.floor( Math.random() * ContentUnitText.length)];
 
     // 取得した値を別の入力フォームに表示
     var resultForm = document.getElementById("resultForm");
