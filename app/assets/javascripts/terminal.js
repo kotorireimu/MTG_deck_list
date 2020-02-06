@@ -5,7 +5,6 @@ $(function(){
       $('.content__type__box').prop('checked', false);
       $(this).prop('checked', true);
       var DataResult = $(this).data("result");
-      console.log(DataResult)
       if (DataResult == 1){
         $("#button").on("click",function(){
           var contentMaskDice = document.getElementById("content__mask__dice").value;
