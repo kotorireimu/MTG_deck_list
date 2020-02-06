@@ -3,9 +3,9 @@
     どちらかをチェックしてください
     %p
     %input.content__type__box{type: "checkbox" ,data: {result: "1"}}
-    ダイス結果を並べる
-    %input.content__type__box{type: "checkbox" ,data: {result: "2"}}
     ダイス結果を足す
+    %input.content__type__box{type: "checkbox" ,data: {result: "2"}}
+    ダイス結果を並べる
   .content__mask
     何面体のサイコロを使用しますか？
     %label{for: "content__mask__dice"}
@@ -28,9 +28,6 @@
     %input#content__unit__text4{type: "text", placeholder: "単位を入力"}
     %input#content__unit__text5{type: "text", placeholder: "単位を入力"}
 
-  
-  
-  -# = link_to "ダイスロール！" , posts_index_path , class: "content__btn"
   %button#button ダイスロール！！
   %label{for: "resultForm"} 結果：
   %input#resultForm{type: "tel"}/
