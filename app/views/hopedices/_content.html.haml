@@ -1,33 +1,32 @@
-.content
-  .content__type
-    どちらかをチェックしてください
-    %p
-    %input.content__type__box{type: "checkbox" ,data: {result: "1"}}
-    ダイス結果を足す
-    %input.content__type__box{type: "checkbox" ,data: {result: "2"}}
-    ダイス結果を並べる
-  .content__mask
-    何面体のサイコロを使用しますか？
-    %label{for: "content__mask__dice"}
-    %p
-    %input#content__mask__dice{type: "tel" , placeholder: "半角数字で入力"}面体
-    %p
-    %input#content__mask__box{type: "checkbox"}
-    特別にダイス内容に0を含める
+.content__type
+  どちらかをチェックしてください
+  %p
+  %input.content__type__box{type: "checkbox" ,data: {result: "1"}}
+  ダイス結果を足す
+  %input.content__type__box{type: "checkbox" ,data: {result: "2"}}
+  ダイス結果を並べる
+.content__mask
+  何面体のサイコロを使用しますか？
+  %label{for: "content__mask__dice"}
+  %p
+  %input#content__mask__dice{type: "tel" , placeholder: "半角数字で入力"}面体
+  %p
+  %input#content__mask__box{type: "checkbox"}
+  特別にダイス内容に0を含める
 
-  .content__number
-    何個使用しますか？
-    %P
-    %input#content__number__dice{type: "tel", placeholder: "半角数字で入力"}個
-  .content__unit
-    %h 使用する単位は何にしますか？(空欄でも可)
-    %p ※ ランダムに決めたい場合は、左から詰めてテキスト欄に一つずつ単位を追加してください
-    %input#content__unit__text1{type: "text", placeholder: "単位を入力"}
-    %input#content__unit__text2{type: "text", placeholder: "単位を入力"}
-    %input#content__unit__text3{type: "text", placeholder: "単位を入力"}
-    %input#content__unit__text4{type: "text", placeholder: "単位を入力"}
-    %input#content__unit__text5{type: "text", placeholder: "単位を入力"}
+.content__number
+  何個使用しますか？
+  %P
+  %input#content__number__dice{type: "tel", placeholder: "半角数字で入力"}個
+.content__unit
+  %h 使用する単位は何にしますか？(空欄でも可)
+  %p ※ ランダムに決めたい場合は、左から詰めてテキスト欄に一つずつ単位を追加してください
+  %input#content__unit__text1{type: "text", placeholder: "単位を入力"}
+  %input#content__unit__text2{type: "text", placeholder: "単位を入力"}
+  %input#content__unit__text3{type: "text", placeholder: "単位を入力"}
+  %input#content__unit__text4{type: "text", placeholder: "単位を入力"}
+  %input#content__unit__text5{type: "text", placeholder: "単位を入力"}
 
-  %button#button ダイスロール！！
-  %label{for: "resultForm"} 結果：
-  %input#resultForm{type: "tel"}/
+%button#button ダイスロール！！
+%label{for: "resultForm"} 結果：
+%input#resultForm{type: "tel"}/
