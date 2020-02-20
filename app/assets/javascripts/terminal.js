@@ -10,9 +10,17 @@ $(function(){
           var contentMaskDice = document.getElementById("content__mask__dice").value;
           var contentNumberDice = document.getElementById("content__number__dice").value;
           sum = 0
-            for (var i = 1; i <= contentNumberDice ;i++ ){
-              var randnum = Math.floor( Math.random() * contentMaskDice + 1);
-              sum = randnum + sum
+            if (document.getElementById("content__mask__box").checked){
+              for (var i = 1; i <= contentNumberDice ;i++ ){
+                contentMaskDiceAddZero = parseInt(contentMaskDice) + parseInt(1)
+                var randnum = Math.floor( Math.random() * contentMaskDiceAddZero);
+                sum = randnum + sum
+              }
+            } else {
+              for (var i = 1; i <= contentNumberDice ;i++ ){
+                var randnum = Math.floor( Math.random() * contentMaskDice + 1);
+                sum = randnum + sum
+              }
             }
           var Sum = sum
       
@@ -34,10 +42,18 @@ $(function(){
           var contentMaskDice = document.getElementById("content__mask__dice").value;
           var contentNumberDice = document.getElementById("content__number__dice").value;
           sum = ""
+          if (document.getElementById("content__mask__box").checked){
+            for (var i = 1; i <= contentNumberDice ;i++ ){
+              contentMaskDiceAddZero = parseInt(contentMaskDice) + parseInt(1)
+              var randnum = Math.floor( Math.random() * contentMaskDiceAddZero);
+              sum = randnum + sum
+            }
+          } else {
             for (var i = 1; i <= contentNumberDice ;i++ ){
               var randnum = Math.floor( Math.random() * contentMaskDice + 1);
               sum = randnum + sum
             }
+          }
           var Sum = sum
       
           var contentUnitText1 = document.getElementById("content__unit__text1").value;
