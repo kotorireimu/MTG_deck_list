@@ -1,0 +1,16 @@
+.title {
+  width:  100vw;
+  height: 100vh;
+  text-align: center;
+  background-color: rgb(3, 142, 223);
+  padding: 5%;
+  &__name {
+    font-size: 10rem;
+    color: greenyellow;
+  }
+  &__btn {
+    padding-top: 5%;
+    font-size: 7rem;
+    color:royalblue;
+  }
+}
